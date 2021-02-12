@@ -1,0 +1,142 @@
+.beautify{
+font-size: 2rem;
+background-color: royalblue;
+}
+
+.hwwrk{
+    font-size: xx-large;
+    font-family : cursive; 
+    justify-content:center;
+    align-items: center;
+    height: 100vh;
+    position: absolute;top: 800px;left: 700px;
+   
+}
+
+.navbartags{
+    font-family: cursive;
+    color: darkgreen;
+    align-content: flex-start;
+    margin: 20px;
+    font-size: x-large;
+}
+
+/* hr.new5 {
+    border: 10px solid green;
+    border-radius: 5px;
+  } */
+
+  a.navbar-brand{
+     
+      align-items: top;
+  }
+
+  .content{
+      font-size: large;
+      font-family: cursive;
+      position: absolute;top: 650px;
+      margin: 10px;
+      padding: 30px;
+  }
+
+
+  .services{
+   background-image: url("servies.jpg");
+   height: 100px;
+    color: rgb(155, 201, 49);
+    font-size: 2rem;
+    font-family: cursive;
+    position:relative;top: 70px;
+    background-image: fill;
+   
+  }
+
+
+  .cardstyle{
+      font-family: cursive;
+
+  }
+
+  .Carousel {
+    width:auto;
+    height:100%;
+    margin: auto;
+  }
+
+  .pricingtitle{
+    font-size: xx-large;
+    font-family : cursive; 
+    justify-content:center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .fontservice{
+    position: 'relative'; 
+    top: 200px;
+    right: 350px;
+    font-size: 1.4rem;
+    font-family: cursive 
+  }
+
+  .formNew{
+    position:absolute;
+    top: 1500px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(247, 238, 238);
+    width: 100%;
+    height:450px;
+    padding-left:400px;
+  }
+
+  .inputTag{
+    /* position:absolute; */
+    top: 180px;
+    width: 60%;
+    border-radius: 10px;
+    left: 50px;
+    margin: 20px;
+    padding-left: 20%;
+  }
+  .signupBox{
+background-image: url("img.jpg");
+background-size: cover;
+  }
+ 
+ @media(max-width:360px){
+   .html{
+     font-size: 55%;
+   }
+   .inputTag{
+    /* position:absolute; */
+    top: 180px;
+    width: 40%;
+    border-radius: 5px;
+    left: 50px;
+    margin: 20px;
+    padding-left: 10%;
+  }
+ }
+ @media(max-width:768px){
+  .html{
+    font-size: 45%;
+  }
+  .hwwrk{
+    font-size: large;
+    font-family : cursive; 
+    justify-content:center;
+    align-items: center;
+    height: 100vh;
+    position: absolute;top: 800px;left: 700px;
+   
+}
+.content{
+  font-size: medium;
+}
+}
+
+.img-fluid{
+  max-width: 100%;
+  height: auto;
+}

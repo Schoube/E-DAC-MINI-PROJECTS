@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+
+
+    <script>
+
+        function printError(eleId, msg) {
+            document.getElementById(eleId).innerHTML = msg;
+
+        }
+
+        function validateForm() {
+            var name = document.contactForm.name.value;
+            var email = document.contactForm.email.value;
+            var mobile = document.contactForm.mobile.value;
+            var location = document.contactForm.location.value;
+
+
+            /* for(var i=0;i<checkboxes.length;i++){
+                 if(checkboxes[i].checked){
+                 hobbies.push(checkboxes[i].value);
+                 }
+             }*/
+
+            var nameErr = emailErr = mobileErr = locationErr = true;
+
+            //validate name
+            if (name == "") {
+                printError("nameErr", "please enter your name");
+            } else {
+                var regex = /^[a-zA-Z\s]+$/;
+                if (regex.test(name) === false) {
+                    printError("nameErr", "please enter your name");
+                }
+                else {
+                    printError("nameErr", "");
+                    nameErr = false;
+                }
+            }
+
+            // validate email id
+
+            if (email == "") {
+                printError("emailErr", "please enter valid mail");
+            }
+            else {
+                var regex = "/^\S+@\S+\.\S+$/";
+                if (regex.test(email) === false) {
+                    printError("emailErr", "Please enter a valid email address");
+                } else {
+                    printError("emailErr", "");
+                    emailErr = false;
+                }
+            }
+
+            // Validate mobile number
+            if (mobile == "") {
+                printError("mobileErr", "Please enter your mobile number");
+            } else {
+                var regex = /^[1-9]\d{9}$/;
+                if (regex.test(mobile) === false) {
+                    printError("mobileErr", "Please enter a valid 10 digit mobile number");
+                } else {
+                    printError("mobileErr", "");
+                    mobileErr = false;
+                }
+            }
+
+            // Validate location
+            if (location == "") {
+                printError("locationErr", "Please enter your location");
+            } else {
+                printError("locationErr", "");
+                locationErr = false;
+            }
+
+
+
+            // Prevent the form from being submitted if there are any errors
+
+            if ((nameErr || emailErr || mobileErr || locationErr) == true) {
+                return false;
+            }
+            else {
+                var dataPreview = "You've entered the following details: \n" +
+                    "Full Name: " + name + "\n" +
+                    "Email Address: " + email + "\n" +
+                    "Mobile Number: " + mobile + "\n" +
+                    "Your location: " + location + "\n";
+
+                /*if(hobbies.length)
+                {
+                  dataPreview +="Hobbies : "+hobbies.join(","); 
+                }*/
+                // Display input data in a dialog box before submitting the form
+                alert(dataPreview);
+
+            }
+
+        };
+
+    </script>
+
+
+
+</head>
+
+<body>
+
+    <form name="contactForm" onsubmit="return validateForm()" action="" method="post">
+        <h2>Let's pickup the garbage
+            that you don't want!</h2>
+        <div class="row">
+            <label>Your Name</label>
+            <input type="text" name="name" placeholder="Youe Name" />
+            <div class="error" id="nameErr"></div>
+        </div>
+
+        <div class="row">
+            <label>Email Address</label>
+            <input type="text" name="email" placeholder="Email Address" />
+            <div class="error" id="emailErr"></div>
+        </div>
+
+        <div class="row">
+            <label>Mobile Number</label>
+            <input type="text" name="mobile" maxlength="10" placeholder="Mobile Number">
+            <div class="error" id="mobileErr"></div>
+        </div>
+
+        <div class="row">
+            <label>Your location</label>
+            <input type="text" name="name" placeholder="Your location " />
+            <div class="error" id="nameErr"></div>
+        </div>
+
+
+        <div class="row">
+            <label>Select Garbage Type</label>
+            <select name="garbage type">
+                <option>Select Garbage Type</option>
+                <option>Newspaper</option>
+                <option>Plastic</option>
+                <option>Metal</option>
+                <option>E-waste</option>
+            </select>
+            <div class="error" id="countryErr"></div>
+        </div>
+
+        <div class="row">
+            <input type="submit" value="Submit">
+        </div>
+
+    </form>
+</body>
+
+</html>
